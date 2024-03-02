@@ -2,7 +2,6 @@ package com.example.authservice;
 
 import com.example.authservice.model.Role;
 import com.example.authservice.model.User;
-import com.example.authservice.repository.UserRepository;
 import com.example.authservice.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -29,7 +28,7 @@ public class AuthServiceApplication implements CommandLineRunner {
         user.setRole(Role.ADMIN);
         user.setEmail("ernn.@hotmail.com");
 
-        userService.saveUser(user);
+        //userService.saveUser(user);
 
     }
 }

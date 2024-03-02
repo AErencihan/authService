@@ -3,17 +3,20 @@ package com.example.authservice.dto;
 
 
 import com.example.authservice.model.Role;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Setter
-@Getter
+
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDto {
 
     private String userName;
     private String password;
     private String email;
     private Role role;
+    private Long id;
 
     public UserDto(Builder builder){
         this.userName = builder.userName;

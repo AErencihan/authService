@@ -33,7 +33,7 @@ public class TokenGenerator {
         return JWT.create()
                 .withSubject(userName)
                 .withExpiresAt(new Date(System.currentTimeMillis()
-                +EXPIRES_ACCESS_TOKEN_MINUTES*120*2000))
+                +EXPIRES_ACCESS_TOKEN_MINUTES*60*60))
                 .withIssuer(ISSUER)
                 .sign(Algorithm.HMAC256(KEY.getBytes()));
     }

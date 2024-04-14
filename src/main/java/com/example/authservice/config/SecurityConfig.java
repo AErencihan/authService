@@ -22,7 +22,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(prePostEnabled = true)
-
 public class SecurityConfig {
 
     private final JwtFilter jwtFilter;
@@ -48,19 +47,17 @@ public class SecurityConfig {
                 .headers().frameOptions().disable().and()
                 .csrf().disable()
                 .cors().and()
-//                .authorizeRequests((auth) ->{
-//                    auth.antMatchers("/api/admin").hasAuthority("ADMIN");
-//                    auth.antMatchers("api/user/").hasAnyAuthority("ADMIN", "USER");
-//                    auth.antMatchers("api/auth/**").permitAll();
-//                    auth.anyRequest().authenticated();
-//                })
+                .authorizeRequests((auth) ->{
+                    auth.antMatchers("/api/admin").hasAuthority("ADMIN");
+                    auth.antMatchers("api/user/").hasAnyAuthority("ADMIN", "USER");
+                    auth.antMatchers("api/auth/**").permitAll();
+                    auth.anyRequest().authenticated();
+                })
 
-
-
-                .authorizeRequests()
-                .antMatchers("/**").permitAll()
-                .anyRequest().authenticated()
-                .and()
+//                .authorizeRequests()
+//                .antMatchers("/**").permitAll()
+//                .anyRequest().authenticated()
+//                .and()
 
                 .formLogin().disable() //Html ve css ile oluşturulan springin kendi form alanı
                 .httpBasic().disable() //Basic authentication kısmı

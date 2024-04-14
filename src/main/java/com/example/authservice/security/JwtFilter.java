@@ -63,6 +63,7 @@ public class JwtFilter extends OncePerRequestFilter {
            response.getWriter().write(objectMapper.writeValueAsString(errors));
 
         }
+        //filterChain.doFilter(request, response);
 
     }
 

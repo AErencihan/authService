@@ -10,10 +10,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestControllerAdvice
-public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
+public class GenericExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(GenericException.class)
-    public ResponseEntity<?> handleException(GenericException ex) {
+    @ExceptionHandler(GlobalException.class)
+    public ResponseEntity<?> handleException(GlobalException ex) {
         Map<String, Object> errors = new HashMap<>();
         errors.put("error", ex.getMessage());
         return ResponseEntity

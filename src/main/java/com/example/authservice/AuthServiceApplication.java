@@ -3,18 +3,17 @@ package com.example.authservice;
 import com.example.authservice.model.Role;
 import com.example.authservice.model.User;
 import com.example.authservice.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+@RequiredArgsConstructor
 public class AuthServiceApplication implements CommandLineRunner {
 
     private final UserService userService;
 
-    public AuthServiceApplication(UserService userService) {
-        this.userService = userService;
-    }
 
     public static void main(String[] args) {
         SpringApplication.run(AuthServiceApplication.class, args);

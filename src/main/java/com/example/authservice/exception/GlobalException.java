@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 @NoArgsConstructor
 @Getter
 @AllArgsConstructor
-public class GenericException extends RuntimeException{
+public class GlobalException extends RuntimeException{
 
     private HttpStatus httpStatus;
     private String message;

@@ -1,7 +1,7 @@
 package com.example.authservice.service;
 
 import com.example.authservice.dto.UserDto;
-import com.example.authservice.exception.GenericException;
+import com.example.authservice.exception.GlobalException;
 
 import com.example.authservice.model.User;
 import com.example.authservice.repository.UserRepository;
@@ -54,7 +54,7 @@ public class UserService {
     // Bu methot bir user objesi döner
     public User findUserByUserName(String username){
         return userRepository.findUserByUserName(username)
-                .orElseThrow(()-> GenericException.builder()
+                .orElseThrow(()-> GlobalException.builder()
                         .httpStatus(HttpStatus.NOT_FOUND)
                         .message("user not found by given Id")
                         .build());

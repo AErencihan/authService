@@ -1,7 +1,7 @@
 package com.example.authservice.service;
 
 import com.example.authservice.dto.TokenResponseDto;
-import com.example.authservice.exception.GenericException;
+import com.example.authservice.exception.GlobalException;
 import com.example.authservice.request.LoginRequest;
 import com.example.authservice.util.TokenGenerator;
 import org.springframework.http.HttpStatus;
@@ -36,7 +36,7 @@ public class AuthService {
                     .build();
 
         }catch (Exception e){
-            throw  GenericException.builder()
+            throw  GlobalException.builder()
                     .httpStatus(HttpStatus.NOT_FOUND)
                     .message("user bulunamadı")
                     .build();
